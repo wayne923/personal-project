@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 
-from app.router import deck
+from app.router.v1 import deck
 
 app = FastAPI()
 
