@@ -1,10 +1,10 @@
 from fastapi import FastAPI
 
-from app.routers import decks
+from app.router import deck
 
 app = FastAPI()
 
-app.include_router(decks.router)
+app.include_router(deck.router)
 
 
 @app.get("/")

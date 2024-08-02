@@ -1,6 +1,6 @@
-from sqlalchemy import String, Boolean, Integer, Column, text, TIMESTAMP
-from .database import Base
+from sqlalchemy import String, Integer, Column, text, TIMESTAMP
 
+from app.config.database import Base
 
 
 class Deck(Base):

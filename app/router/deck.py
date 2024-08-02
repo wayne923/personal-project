@@ -1,17 +1,10 @@
 from typing import List
 
 from fastapi import APIRouter
-from pydantic import BaseModel
+
 
 router = APIRouter()
 
-class Card(BaseModel):
-    front: str
-    back: str
-
-class Deck(BaseModel):
-    name: str
-    Cards: List[Card]
 
 
 @router.get("/decks/", tags=["decks"])
