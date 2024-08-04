@@ -15,7 +15,7 @@ class DeckRepository:
         self.session.add(deck)
         self.session.commit()
         self.session.refresh(deck)
-        return DeckIO(id=deck.title, name=deck.cards)
+        return DeckIO(title=deck.title, cards=deck.cards)
 
     def get_all(self) -> List[Optional[DeckIO]]:
         pass
