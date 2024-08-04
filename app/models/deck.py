@@ -1,11 +1,16 @@
-from sqlalchemy import String, Integer, Column, text, TIMESTAMP
+from typing import List
+
+from sqlalchemy import String, Integer, Column, func, DateTime
+from sqlalchemy.orm import relationship, Mapped, mapped_column
 
 from app.config.database import Base
+from app.models.card import Card
 
 
 class Deck(Base):
-    __tablename__ = "decks"
+    __tablename__ = "deck"
 
-    id = Column(Integer, primary_key=True, nullable=False)
+    id: Mapped[int] = mapped_column(Integer, primary_key=True, nullable=False)
     title = Column(String, nullable=False)
-
+    creation_date = Column(DateTime(timezone=True), server_default=func.now())
+    cards: Mapped[List[Card]] = relationship()
