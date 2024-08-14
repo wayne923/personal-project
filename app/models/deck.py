@@ -13,4 +13,3 @@ class Deck(Base):
     id: Mapped[int] = mapped_column(Integer, primary_key=True, nullable=False)
     title = Column(String, nullable=False)
     creation_date = Column(DateTime(timezone=True), server_default=func.now())
-    cards: Mapped[List[Card]] = relationship()
