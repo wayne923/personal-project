@@ -1,6 +1,9 @@
 from fastapi import FastAPI
+from utils.init_db import create_tables
 
 
 
-app = FastAPI()
+app = FastAPI(
+    debug=True
+)
 
